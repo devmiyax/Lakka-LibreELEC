@@ -20,7 +20,8 @@
 # creating initial settings file
   if [ ! -f /storage/.cache/connman/settings ]; then
     mkdir -p /storage/.cache/connman
-      cp /usr/share/connman/settings /storage/.cache/connman
+    cp /usr/share/connman/settings /storage/.cache/connman
+    cp -rfp /usr/share/connman/wifi/* /storage/.cache/connman/
   fi
 
 # set variable for connman main.conf location

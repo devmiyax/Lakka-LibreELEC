@@ -138,7 +138,7 @@ if [ -n "$PKG_GIT_URL" -a -z "$PKG_URL" ]; then
     echo "${CALC_SHA256}" > $STAMP_SHA
 
   else
-    echo -e "${boldred}WARNING${endcolor} Package '$PKG_NAME' not downloaded! Use\n\n\tDISTRO=Lakka $0\n\nto download Lakka libretro git-based packages!\n\n"
+    echo -e "${boldred}WARNING${endcolor} Package '$PKG_NAME' not downloaded! Use\n\n\tDISTRO=YabaSanshiro $0\n\nto download YabaSanshiro libretro git-based packages!\n\n"
   fi
 
   exit 0

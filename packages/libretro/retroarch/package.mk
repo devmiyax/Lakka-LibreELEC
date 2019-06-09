@@ -42,6 +42,7 @@ fi
 
 if [ "$OPENGLES_SUPPORT" = yes ]; then
   PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET $OPENGLES"
+
 fi
 
 if [ "$OPENGL_SUPPORT" == yes ]; then

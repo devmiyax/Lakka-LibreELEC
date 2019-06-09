@@ -43,10 +43,10 @@
   UPDATE_ROOT=/storage/.update
   UPDATE_DIR="$UPDATE_ROOT"
 
-  UPDATE_KERNEL="lakka/KERNEL"
-  UPDATE_SYSTEM="lakka/SYSTEM"
-  IMAGE_KERNEL="lakka/KERNEL"
-  IMAGE_SYSTEM="lakka/SYSTEM"
+  UPDATE_KERNEL="yabasanshiro/KERNEL"
+  UPDATE_SYSTEM="yabasanshiro/SYSTEM"
+  IMAGE_KERNEL="yabasanshiro/KERNEL"
+  IMAGE_SYSTEM="yabasanshiro/SYSTEM"
 
   BOOT_STEP="start"
   MD5_FAILED="0"
@@ -654,8 +654,8 @@
 
     mount_part "$boot" "/flash" "rw,noatime"
 
-    mkdir -p /flash/lakka/logs
-    /usr/bin/busybox dmesg > /flash/lakka/logs/last_dmesg.log
+    mkdir -p /flash/yabasanshiro/logs
+    /usr/bin/busybox dmesg > /flash/yabasanshiro/logs/last_dmesg.log
     sync
   }
 
@@ -664,8 +664,8 @@
 
     wakeonlan
   
-    mkdir -p /flash/lakka/storage
-    mount --bind /flash/lakka/storage /storage
+    mkdir -p /flash/yabasanshiro/storage
+    mount --bind /flash/yabasanshiro/storage /storage
   }
 
   # Make last bootloader label (installer, live, run etc.) as the new default
@@ -973,7 +973,7 @@
     if [ "$SYSTEM_TORAM" = "no" -o "$INSTALLED_MEMORY" -lt "$SYSTEM_TORAM_LIMIT" ]; then
       mount_part "/flash/$IMAGE_SYSTEM" "/sysroot" "ro,loop"
     else
-      mkdir -p /dev/lakka #because /dev/$IMAGE_SYSTEM = "/dev/lakka/SYSTEM"
+      mkdir -p /dev/yabasanshiro #because /dev/$IMAGE_SYSTEM = "/dev/yabasanshiro/SYSTEM"
       cp /flash/$IMAGE_SYSTEM /dev/$IMAGE_SYSTEM
       mount_part "/dev/$IMAGE_SYSTEM" "/sysroot" "ro,loop"
     fi

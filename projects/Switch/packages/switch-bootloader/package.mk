@@ -33,7 +33,7 @@ makeinstall_target() {
   mkimage -A arm -T script -O linux -d $PKG_DIR/assets/boot_usb.txt $BUILD/$PKG_NAME-$PKG_VERSION/boot_usb.scr
 
   cp -PRv $PKG_DIR/assets/splash.bmp $INSTALL/usr/share/bootloader/boot/splash.bmp
-  cp -PRv $PKG_DIR/assets/00-Lakka.ini $INSTALL/usr/share/bootloader/boot/00-Lakka.ini
+  cp -PRv $PKG_DIR/assets/00-YabaSanshiro.ini $INSTALL/usr/share/bootloader/boot/00-YabaSanshiro.ini
   cp -PRv $BUILD/$PKG_NAME-$PKG_VERSION/boot.scr $INSTALL/usr/share/bootloader/boot/boot.scr
   cp -PRv $BUILD/$PKG_NAME-$PKG_VERSION/boot_uart.scr $INSTALL/usr/share/bootloader/boot/boot_uart.scr
     cp -PRv $BUILD/$PKG_NAME-$PKG_VERSION/boot_usb.scr $INSTALL/usr/share/bootloader/boot/boot_usb.scr

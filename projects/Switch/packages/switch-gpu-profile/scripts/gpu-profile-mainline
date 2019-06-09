@@ -6,7 +6,7 @@ import sys
 This is a script to manage the Switch GPU clock profiles. When shutting down, the current profile is lost -
 therefore, this script must be called at each reboot to restore the default profile.
 
-Written by natinusala for Lakka. See print_usage() for usage.
+Written by natinusala for YabaSanshiro. See print_usage() for usage.
 
 For now the profile is not retained and is set to default non-docked speed when rebooting.
 '''

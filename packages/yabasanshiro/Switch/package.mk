@@ -23,12 +23,13 @@ PKG_VERSION=""
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/lakkatv/Lakka"
+PKG_SITE="https://github.com/devmiyax/Lakka-LibreELEC"
 PKG_URL=""
-PKG_DEPENDS_TARGET="freetype libdrm pixman $OPENGL libepoxy glu retroarch $LIBRETRO_CORES switch-gpu-profile switch-cpu-profile xinput xbindkeys xdotool mergerfs rewritefs alsa-plugins"
+#PKG_DEPENDS_TARGET="freetype libdrm pixman $OPENGL libepoxy glu retroarch switch-gpu-profile switch-cpu-profile xinput xbindkeys xdotool mergerfs rewritefs alsa-plugins"
+PKG_DEPENDS_TARGET="freetype libdrm pixman $OPENGL libepoxy glu yabasanshiro-core switch-gpu-profile switch-cpu-profile xinput xbindkeys xdotool mergerfs rewritefs alsa-plugins"
 PKG_PRIORITY="optional"
 PKG_SECTION="virtual"
-PKG_SHORTDESC="Lakka metapackage for Switch"
+PKG_SHORTDESC="YabaSanshiro for Switch"
 PKG_LONGDESC=""
 
 if [ "$DEVICE" = "L4T" ]; then
@@ -43,7 +44,8 @@ post_install() {
   enable_service var-bluetoothconfig.mount
   enable_service switch-set-mac-address.service
   # enable_service switch-wifi-fix.service
-  
+  enable_service sshd.service
+  enable_service smbd.service
   mkdir -p $INSTALL/usr/bin
   cp -P $PKG_DIR/scripts/switch-wifi-fix $INSTALL/usr/bin
   cp -P $PKG_DIR/scripts/switch-set-mac-address $INSTALL/usr/bin

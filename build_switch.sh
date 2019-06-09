@@ -1,10 +1,10 @@
 #!/bin/bash
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-export DISTRO="Lakka"
+export DISTRO="YabaSanshiro"
 export PROJECT="Switch"
-export ARCH="arm"
-
+export ARCH="aarch64"
+export DEVICE="L4T"
 build_target() {
   cd "$PROJECT_DIR" && make image $MAKE_OPTS
 }

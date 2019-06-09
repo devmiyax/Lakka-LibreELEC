@@ -55,7 +55,7 @@ load-module module-suspend-on-idle
 ### Enable positioned event sounds
 load-module module-position-event-sounds
 
-### Lakka additions
+### YabaSanshiro additions
 load-module module-native-protocol-tcp auth-anonymous=1
 load-module module-switch-on-connect
 load-module module-switch-on-port-available

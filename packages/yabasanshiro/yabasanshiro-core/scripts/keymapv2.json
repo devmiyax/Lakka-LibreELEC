@@ -1,0 +1,100 @@
+{
+  "0_Joy-Con Rails_060000007e0500000820000000010000": {
+    "a": {
+      "id": 1,
+      "type": "button",
+      "value": 1
+    },
+    "analogleft": {
+      "id": 4,
+      "type": "axis",
+      "value": 0
+    },
+    "analogright": {
+      "id": 5,
+      "type": "axis",
+      "value": 0
+    },
+    "analogx": {
+      "id": 0,
+      "type": "axis",
+      "value": 0
+    },
+    "analogy": {
+      "id": 1,
+      "type": "axis",
+      "value": 0
+    },
+    "b": {
+      "id": 0,
+      "type": "button",
+      "value": 1
+    },
+    "c": {
+      "id": 6,
+      "type": "button",
+      "value": 1
+    },
+    "down": {
+      "id": 15,
+      "type": "button",
+      "value": 1
+    },
+    "l": {
+      "id": 7,
+      "type": "button",
+      "value": 1
+    },
+    "left": {
+      "id": 16,
+      "type": "button",
+      "value": 1
+    },
+    "r": {
+      "id": 8,
+      "type": "button",
+      "value": 1
+    },
+    "right": {
+      "id": 17,
+      "type": "button",
+      "value": 1
+    },
+    "select": {
+      "id": 9,
+      "type": "button",
+      "value": 1
+    },
+    "start": {
+      "id": 10,
+      "type": "button",
+      "value": 1
+    },
+    "up": {
+      "id": 14,
+      "type": "button",
+      "value": 1
+    },
+    "x": {
+      "id": 3,
+      "type": "button",
+      "value": 1
+    },
+    "y": {
+      "id": 2,
+      "type": "button",
+      "value": 1
+    },
+    "z": {
+      "id": 5,
+      "type": "button",
+      "value": 1
+    }
+  },
+  "player1": {
+    "DeviceID": 0,
+    "deviceGUID": "060000007e0500000820000000010000",
+    "deviceName": "Joy-Con Rails",
+    "padmode": 0
+  }
+}

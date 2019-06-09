@@ -18,28 +18,36 @@
 #  http://www.gnu.org/copyleft/gpl.html
 ################################################################################
 
-PKG_NAME="yabasanshiro"
-PKG_VERSION="f702466"
-PKG_GIT_BRANCH="yabasanshiro"
+PKG_NAME="Switch"
+PKG_VERSION=""
 PKG_REV="1"
 PKG_ARCH="any"
-PKG_LICENSE="GPLv2"
-PKG_SITE="https://github.com/libretro/yabause"
-PKG_GIT_URL="$PKG_SITE"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_LICENSE="GPL"
+PKG_SITE="https://github.com/devmiyax/Lakka-LibreELEC"
+PKG_URL=""
+#PKG_DEPENDS_TARGET="freetype libdrm pixman $OPENGL libepoxy glu retroarch switch-gpu-profile switch-cpu-profile xinput xbindkeys xdotool mergerfs rewritefs alsa-plugins"
+PKG_DEPENDS_TARGET="freetype libdrm pixman $OPENGL libepoxy glu yabasanshiro-core switch-gpu-profile switch-cpu-profile xinput xbindkeys xdotool mergerfs rewritefs alsa-plugins"
 PKG_PRIORITY="optional"
-PKG_SECTION="libretro"
-PKG_SHORTDESC="Port of YabaSanshiro to libretro."
-PKG_LONGDESC="Port of YabaSanshiro to libretro."
+PKG_SECTION="virtual"
+PKG_SHORTDESC="YabaSanshiro for Switch"
+PKG_LONGDESC=""
+
+if [ "$DEVICE" = "L4T" ]; then
+  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET libdrm libXext libXdamage libXfixes libXxf86vm libxcb libX11 libXrandr"
+fi
 
 PKG_IS_ADDON="no"
 PKG_AUTORECONF="no"
 
-make_target() {
-  make -C yabause/src/libretro platform=arm64
+post_install() {
+  enable_service xorg-configure-switch.service
+  enable_service var-bluetoothconfig.mount
+  enable_service switch-set-mac-address.service
+  # enable_service switch-wifi-fix.service
+  enable_service sshd.service
+  enable_service smbd.service
+  mkdir -p $INSTALL/usr/bin
+  cp -P $PKG_DIR/scripts/switch-wifi-fix $INSTALL/usr/bin
+  cp -P $PKG_DIR/scripts/switch-set-mac-address $INSTALL/usr/bin
 }
 
-makeinstall_target() {
-  mkdir -p $INSTALL/usr/lib/libretro
-  cp yabause/src/libretro/yabasanshiro_libretro.so $INSTALL/usr/lib/libretro/
-}

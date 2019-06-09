@@ -12,7 +12,7 @@ to Switch's hardware can handle.
 By experimentally obtained experience, 150MHz works fine with
 64GB Samsung EVO+ microSD cards
 
-However, 100MHz is more stable and supports more cards. Since Lakka doesn't
+However, 100MHz is more stable and supports more cards. Since YabaSanshiro doesn't
 have a lot of I/O, 100Mhz is preferred over 150MHz.
 ---
  arch/arm64/boot/dts/nvidia/tegra210-nintendo-switch.dts | 1 +
